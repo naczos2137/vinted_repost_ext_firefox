@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Vinted Reposter",
+  "version": "1.0",
+  "description": "Repost Vinted ads easily",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "unlimitedStorage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.vinted.fr/*",
+    "https://www.vinted.be/*",
+    "https://www.vinted.it/*",
+    "https://www.vinted.es/*",
+    "https://www.vinted.de/*",
+    "https://www.vinted.co.uk/*",
+    "https://*.vinted.net/*",
+    "https://*.vinted.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.vinted.fr/*", "https://www.vinted.be/*", "https://www.vinted.it/*", "https://www.vinted.es/*", "https://www.vinted.de/*", "https://www.vinted.co.uk/*"],
+      "js": ["content.js", "dumper.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
