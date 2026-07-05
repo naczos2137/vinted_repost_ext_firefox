@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "repost_start") {
     console.log("[VintedBackground] Starting repost, saving data and redirecting...");
     chrome.storage.local.set({ repostData: request.data }, () => {
-      chrome.tabs.update(sender.tab.id, { url: "https://www.vinted.fr/items/new" });
+      chrome.tabs.update(sender.tab.id, { url: `${new URL(sender.tab.url).origin}/items/new` });
       sendResponse({ status: "redirecting" });
     });
     return true;

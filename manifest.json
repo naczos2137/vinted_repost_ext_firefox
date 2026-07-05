@@ -17,6 +17,7 @@
     "https://www.vinted.es/*",
     "https://www.vinted.de/*",
     "https://www.vinted.co.uk/*",
+    "https://www.vinted.pl/*",
     "https://*.vinted.net/*",
     "https://*.vinted.com/*"
   ],
@@ -25,7 +26,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.vinted.fr/*", "https://www.vinted.be/*", "https://www.vinted.it/*", "https://www.vinted.es/*", "https://www.vinted.de/*", "https://www.vinted.co.uk/*"],
+      "matches": ["https://www.vinted.fr/*", "https://www.vinted.be/*", "https://www.vinted.it/*", "https://www.vinted.es/*", "https://www.vinted.de/*", "https://www.vinted.co.uk/*", "https://www.vinted.pl/*"],
       "js": ["content.js", "dumper.js"]
     }
   ],
